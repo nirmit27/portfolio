@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -7,9 +7,10 @@ export default function Projects() {
       title: "Gemini AI",
       description:
         "An advanced AI-powered web application that provides a suite of services, including a chatbot, image captioning and text embedding.",
-      image: "/file.svg",
+      image: "/screenshots/proj_1.png",
       tech: ["Streamlit", "Gemini", "Generative AI"],
       link: "https://github.com/nirmit27/gemini-ai",
+      deployment: "https://gemini-ai-6pieo6evhzghyj5rgazsje.streamlit.app/",
     },
     {
       title: "Book Recommender System",
@@ -19,14 +20,17 @@ export default function Projects() {
         "https://raw.githubusercontent.com/nirmit27/Book-Recommender-System/refs/heads/master/static/ss_top50.png",
       tech: ["Flask", "sklearn", "Tailwind", "Render"],
       link: "https://github.com/nirmit27/Book-Recommender-System",
+      deployment: "https://book-recommender-system-t2aq.onrender.com",
     },
     {
-      title: "Link Shortener",
+      title: "NLP Text Analyzer",
       description:
-        "A simple and efficient RESTful API built with Express.js to shorten, manage, and retrieve URLs.",
-      image: "/file.svg",
-      tech: ["Express.js", "MongoDB", "Vercel"],
-      link: "https://github.com/nirmit27/link-shrink",
+        "A simple GUI application created using the tkinter library that offers NLP features like sentiment analysis.",
+      image:
+        "https://raw.githubusercontent.com/nirmit27/NLP-Text-Analyzer/refs/heads/mongo/resources/sa.png",
+      tech: ["API", "tkinter", "MongoDB"],
+      link: "https://github.com/nirmit27/NLP-Text-Analyzer",
+      deployment: "",
     },
   ];
 
@@ -76,14 +80,24 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-auto flex gap-4">
+                <div className="mt-auto flex gap-6">
                   <a
                     href={project.link}
-                    className="flex items-center gap-2 text-gray-600 hover:text-slate-900 transition-colors duration-200"
+                    className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-200"
                   >
                     <Github size={16} />
                     <span className="text-sm">Code</span>
                   </a>
+
+                  {project.deployment && (
+                    <a
+                      href={project.deployment}
+                      className="flex items-center gap-2 text-blue-600 hover:text-blue-900 transition-colors duration-200"
+                    >
+                      <ExternalLink size={16} />
+                      <span className="text-sm">Deployment</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
