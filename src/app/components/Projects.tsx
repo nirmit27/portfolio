@@ -84,6 +84,7 @@ export default function Projects() {
                   <a
                     href={project.link}
                     className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-200"
+                    target="__blank"
                   >
                     <Github size={16} />
                     <span className="text-sm">Code</span>
@@ -93,6 +94,7 @@ export default function Projects() {
                     <a
                       href={project.deployment}
                       className="flex items-center gap-2 text-blue-600 hover:text-blue-900 transition-colors duration-200"
+                      target="__blank"
                     >
                       <ExternalLink size={16} />
                       <span className="text-sm">Deployment</span>

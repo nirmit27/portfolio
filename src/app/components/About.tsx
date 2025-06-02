@@ -1,7 +1,8 @@
-"use client";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
+  const profileLink = "https://github.com/nirmit27";
   const selfiePath = "https://avatars.githubusercontent.com/u/93557744?v=4";
 
   return (
@@ -18,7 +19,7 @@ export default function About() {
           {/* Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-600">
-              I&apos;m a ML enthusiast with full-stack development skills,
+              I&apos;m a ML engineer with full-stack dev elopment skills,
               specializing in AI-powered web applications. I work with{" "}
               <span className="font-semibold">Python</span> for machine learning
               and <span className="font-semibold">React</span> for creating
@@ -32,7 +33,7 @@ export default function About() {
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm">
-                ML enthusiast
+                ML Engineer
               </span>
               <span className="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm">
                 Full-Stack Developer
@@ -43,9 +44,10 @@ export default function About() {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="flex justify-center md:justify-end">
-            <div className="relative w-72 h-72 rounded-full p-3 bg-gradient-to-br from-slate-300 to-blue-400">
+          {/* Avatar and Link */}
+          <div className="flex flex-col gap-4 items-center justify-center md:justify-end">
+            {/* Avatar */}
+            <div className="relative w-72 h-72 rounded-full p-3 bg-gradient-to-br from-slate-300 to-blue-500">
               <div className="w-full h-full rounded-full bg-white shadow-lg overflow-hidden">
                 <Image
                   src={selfiePath}
@@ -57,6 +59,15 @@ export default function About() {
                 />
               </div>
             </div>
+
+            {/* Profile Link */}
+            <a
+              href={profileLink}
+              className="flex items-center text-blue-600 hover:text-blue-900 transition-colors duration-200"
+              target="__blank"
+            >
+              <ExternalLink size={32} />
+            </a>
           </div>
         </div>
       </div>

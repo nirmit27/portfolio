@@ -14,7 +14,7 @@ export default function Hero() {
             Nirmit Mishra
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 font-light">
-            Machine Learning Enthusiast
+            Machine Learning Engineer
           </p>
         </div>
 
