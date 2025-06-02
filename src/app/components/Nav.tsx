@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,8 @@ export default function Nav() {
   const avatarPath = process.env.NEXT_PUBLIC_AVATAR_PATH || "";
 
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },  
+    { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
@@ -35,27 +35,29 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Avatar */}
-          <div className="flex items-center space-x-3">
-            <div className="relative">
-              <Image
-                src={avatarPath}
-                alt="NM Logo"
-                width={40}
-                height={40}
-                className="rounded-lg"
-                priority
-              />
+          <Link href={"#home"}>
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <Image
+                  src={avatarPath}
+                  alt="NM Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-lg"
+                  priority
+                />
+              </div>
+              <div className="hidden sm:block">
+                <span
+                  className={`text-lg font-semibold transition-colors duration-300 ${
+                    scrolled ? "text-slate-900" : "text-white"
+                  }`}
+                >
+                  Nirmit Mishra
+                </span>
+              </div>
             </div>
-            <div className="hidden sm:block">
-              <span
-                className={`text-lg font-semibold transition-colors duration-300 ${
-                  scrolled ? "text-slate-900" : "text-white"
-                }`}
-              >
-                Nirmit Mishra
-              </span>
-            </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
