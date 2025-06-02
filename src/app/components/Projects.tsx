@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -10,7 +10,6 @@ export default function Projects() {
       image: "/file.svg",
       tech: ["Streamlit", "Gemini", "Generative AI"],
       link: "https://github.com/nirmit27/gemini-ai",
-      live: "#",
     },
     {
       title: "Book Recommender System",
@@ -20,7 +19,6 @@ export default function Projects() {
         "https://raw.githubusercontent.com/nirmit27/Book-Recommender-System/refs/heads/master/static/ss_top50.png",
       tech: ["Flask", "sklearn", "Tailwind", "Render"],
       link: "https://github.com/nirmit27/Book-Recommender-System",
-      live: "#",
     },
     {
       title: "Link Shortener",
@@ -29,7 +27,6 @@ export default function Projects() {
       image: "/file.svg",
       tech: ["Express.js", "MongoDB", "Vercel"],
       link: "https://github.com/nirmit27/link-shrink",
-      live: "#",
     },
   ];
 
@@ -86,13 +83,6 @@ export default function Projects() {
                   >
                     <Github size={16} />
                     <span className="text-sm">Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    className="flex items-center gap-2 text-gray-600 hover:text-slate-900 transition-colors duration-200"
-                  >
-                    <ExternalLink size={16} />
-                    <span className="text-sm">Live Demo</span>
                   </a>
                 </div>
               </div>
