@@ -1,3 +1,3 @@
 ## My Portfolio
 
-Hello there. 👋
+Hello there.
