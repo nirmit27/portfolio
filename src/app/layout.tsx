@@ -2,7 +2,9 @@ import type React from "react";
 import type { Metadata } from "next";
 
 import "./globals.css";
+
 import Nav from "./components/Nav";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Nirmit Mishra",
@@ -19,6 +21,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

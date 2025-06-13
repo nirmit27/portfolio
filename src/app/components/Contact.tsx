@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 
 export default function Contact() {
+  const GSCRIPT_URL = process.env.NEXT_PUBLIC_SCRIPT_URL || "";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,28 +13,32 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
+
+  const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
 
-  // Hide toasts after 5 seconds ...
+  // Handling toasts ...
   useEffect(() => {
-    if (showToast) {
-      const timer = setTimeout(() => {
-        setShowToast(false);
-        setSubmitStatus("");
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
+    if (!showToast) return;
+    const timer = setTimeout(() => {
+      setShowToast(false);
+      setSubmitStatus("");
+      setToastMessage("");
+    }, 5000);
+    return () => clearTimeout(timer);
   }, [showToast]);
 
-  const GSCRIPT_URL = process.env.NEXT_PUBLIC_SCRIPT_URL || "";
-
-  const showSuccessToast = () => {
+  const showSuccessToast = (message: string) => {
     setSubmitStatus("success");
+    setToastMessage(message);
     setShowToast(true);
   };
 
-  const showErrorToast = () => {
+  const showErrorToast = (
+    message = "Something went wrong! Please try again later."
+  ) => {
     setSubmitStatus("error");
+    setToastMessage(message);
     setShowToast(true);
   };
 
@@ -51,45 +57,41 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("subject", formData.subject);
-      formDataToSend.append("message", formData.message);
+      const formParams = new URLSearchParams();
+      formParams.append("name", formData.name);
+      formParams.append("email", formData.email);
+      formParams.append("subject", formData.subject);
+      formParams.append("message", formData.message);
 
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-      await fetch(GSCRIPT_URL, {
+      const res = await fetch(GSCRIPT_URL, {
         method: "POST",
-        body: formDataToSend,
-        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formParams.toString(),
         signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
-      console.log("Contact form submitted successfully.");
-      showSuccessToast();
+      const data = await res.json();
 
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error("Error submitting form : ", error);
-
-      if (error instanceof Error && error.name === "AbortError") {
-        showSuccessToast();
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+      if (data.status === "success") {
+        showSuccessToast(data.message);
+        setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        showErrorToast();
+        console.error("❌ Error : ", data.message);
+        showErrorToast(data.message);
+      }
+    } catch (error) {
+      if (error instanceof Error && error.name === "AbortError") {
+        console.warn("⚠️ Request timed out!");
+        showErrorToast("Something went wrong! Please try again later.");
+      } else {
+        console.error("❌ Network/Server Error : ", error);
+        showErrorToast("Something went wrong! Please try again later.");
       }
     } finally {
       setIsSubmitting(false);
@@ -141,16 +143,14 @@ export default function Contact() {
               >
                 {submitStatus === "success"
                   ? "Message Sent!"
-                  : "Error Occurred"}
+                  : "Error Occurred."}
               </p>
               <p
                 className={`mt-1 text-sm ${
                   submitStatus === "success" ? "text-green-700" : "text-red-700"
                 }`}
               >
-                {submitStatus === "success"
-                  ? "Thank you! I'll get back to you soon."
-                  : "Please try again or contact me directly."}
+                {toastMessage}
               </p>
             </div>
             <div className="ml-4 flex-shrink-0 flex">
@@ -182,16 +182,17 @@ export default function Contact() {
         </div>
       )}
 
-      <section id="contact" className="py-20">
+      <section id="contact" className="pt-30 pb-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4">
               Let&apos;s Work Together
             </h2>
             <div className="w-20 h-px bg-gray-300 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Have a project or idea in mind? Fill out the form below, and
-              I&apos;ll get back to you as soon as possible.
+            <p className="md:text-lg text-sm text-gray-600 max-w-2xl mx-auto">
+              Have a project or idea in mind?
+              <br />
+              Fill out the form below, and I&apos;ll get back to you!
             </p>
           </div>
 
@@ -199,8 +200,6 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="space-y-6 bg-white py-4 px-8 rounded-xl shadow-md"
           >
-            {/* Remove the old success/error messages since we now have toast */}
-
             <div>
               <label
                 htmlFor="name"

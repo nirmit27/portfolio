@@ -35,7 +35,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="pt-30 pb-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4">
@@ -61,33 +61,33 @@ export default function Projects() {
               </div>
 
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                <h3 className="md:text-xl text-lg font-semibold text-slate-900 mb-2">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 leading-relaxed flex-grow">
+                <p className="text-gray-600 mb-4 leading-relaxed flex-grow md:text-lg text-sm">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 md:text-sm text-xs">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-auto flex gap-6">
+                <div className="mt-auto ml-1 flex gap-6 md:text-sm text-xs">
                   <a
                     href={project.link}
                     className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-200"
                     target="__blank"
                   >
                     <Github size={16} />
-                    <span className="text-sm">Code</span>
+                    <span>Code</span>
                   </a>
 
                   {project.deployment && (
@@ -97,7 +97,7 @@ export default function Projects() {
                       target="__blank"
                     >
                       <ExternalLink size={16} />
-                      <span className="text-sm">Deployment</span>
+                      <span>Deployment</span>
                     </a>
                   )}
                 </div>

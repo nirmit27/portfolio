@@ -40,7 +40,7 @@ export default function Nav() {
               <div className="relative">
                 <Image
                   src={avatarPath}
-                  alt="NM Logo"
+                  alt="Nerv Logo"
                   width={40}
                   height={40}
                   className="rounded-lg"
@@ -69,7 +69,7 @@ export default function Nav() {
                   scrolled
                     ? "text-gray-700 hover:text-slate-900"
                     : "text-white/90 hover:text-white"
-                } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full`}
+                } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#b91c1c] after:transition-all after:duration-300 hover:after:w-full`}
               >
                 {item.name}
               </a>
@@ -96,18 +96,18 @@ export default function Nav() {
           </button>
         </div>
 
-        {/* Mobile Navigation menu */}
+        {/* Mobile navigation menu */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-84 opacity-100" : "max-h-0 opacity-0"
+          className={`text-sm md:hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-90 opacity-100" : "max-h-0 opacity-0"
           } overflow-hidden`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md mt-2">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md my-1 rounded-md">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-3 text-gray-700 hover:text-slate-900 hover:bg-gray-50 rounded-lg transition-all duration-200 font-medium"
+                className="block px-4 py-3 text-gray-700 hover:text-slate-900 hover:bg-gray-100 rounded-lg transition-all duration-200 font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
