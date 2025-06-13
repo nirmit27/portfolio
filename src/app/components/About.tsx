@@ -19,7 +19,7 @@ export default function About() {
           {/* Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-600">
-              I&apos;m a ML engineer with full-stack dev elopment skills,
+              I&apos;m a ML engineer with full-stack development skills,
               specializing in AI-powered web applications. I work with{" "}
               <span className="font-semibold">Python</span> for machine learning
               and <span className="font-semibold">React</span> for creating
