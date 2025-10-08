@@ -24,7 +24,7 @@ export default function ScrollToTop() {
       onClick={scrollToTop}
       className={`fixed md:bottom-8 md:right-8 bottom-3 right-3 z-50 p-3 rounded-full shadow-lg transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-      } bg-[#b91c1c] hover:bg-red-600 text-white`}
+      } bg-[#b91c1c] hover:bg-red-600 text-white cursor-pointer`}
       aria-label="Uppity Doo"
     >
       <ArrowUpIcon className="w-5 h-5" />

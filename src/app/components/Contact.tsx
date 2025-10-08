@@ -182,8 +182,9 @@ export default function Contact() {
         </div>
       )}
 
+      {/* Form */}
       <section id="contact" className="pt-30 pb-10">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4">
               Let&apos;s Work Together
@@ -276,13 +277,15 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="cursor-pointer w-full px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
+            <div className="flex justify-end items-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="cursor-pointer md:w-2/4 w-full px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </div>
           </form>
         </div>
       </section>

@@ -1,35 +1,8 @@
 import Image from "next/image";
 
-export default function Skills() {
-  const skillBadges = [
-    {
-      title: "Languages",
-      names: ["C", "Python", "Java", "HTML", "CSS", "JS"],
-    },
-    {
-      title: "Databases",
-      names: ["MongoDB", "MySQL", "Sqlite"],
-    },
-    {
-      title: "Frameworks",
-      names: [
-        "Express",
-        "React",
-        "Next",
-        "Nodejs",
-        "Tailwind",
-        "Flask",
-        "FastAPI",
-        "sklearn",
-        "Pytorch",
-      ],
-    },
-    {
-      title: "Tools",
-      names: ["Postman", "Vercel", "Docker", "Anaconda", "VSCode", "Git"],
-    },
-  ];
+import { skillBadges } from "@/config/config";
 
+export default function Skills() {
   const skillBadgeURL = process.env.NEXT_PUBLIC_SKILLS_URL || "";
 
   return (
@@ -56,12 +29,12 @@ export default function Skills() {
                   height={150}
                   src={`${skillBadgeURL}?i=${category.names
                     .map((name) => name.toLowerCase())
-                    .join(",")}&theme=dark&perline=3`}
+                    .join(",")}&theme=light&perline=3`}
                   alt={`${category.title} icons`}
                   className="transition-transform duration-300 hover:scale-105"
                 />
 
-                {/* Skill Names */}
+                {/* Skill Titles */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 w-full">
                   {category.names.map((skill, skillIndex) => (
                     <div

@@ -1,4 +1,4 @@
-// Things may start falling apart from here ...
+// This is NOT safe.
 
 const nextConfig = {
   images: {

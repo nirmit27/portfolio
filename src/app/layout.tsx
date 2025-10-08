@@ -8,7 +8,7 @@ import ScrollToTop from "./components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Nirmit Mishra",
-  description: "Just a dev.",
+  description: "A machine learning engineer.",
 };
 
 export default function RootLayout({
