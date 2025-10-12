@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../SectionHeader";
 import { profileLink, selfiePath } from "@/config/config";
 
 export default function About() {

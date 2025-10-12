@@ -19,11 +19,9 @@ export default function Hero() {
         </div>
 
         <div className="space-y-8">
-          <p className="md:text-lg text-[0.85rem] text-gray-500 max-w-2xl mx-auto leading-relaxed text-center">
+          <p className="md:text-lg text-[0.85rem] text-gray-500 max-w-2xl mx-auto leading-relaxed md:text-center text-justify">
             I build intelligent, user-focused web applications — from smart
-            dashboards and fraud detection systems to LLM-powered tools. I
-            specialize in creating seamless experiences where functionality
-            meets minimalist design.
+            dashboards to LLM-powered tools using a minimalist design language.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -4,11 +4,11 @@ import { SkillBadge, NavItem, Project } from "@/types/types";
 
 // URL configurations
 export const GSCRIPT_URL: string = process.env.NEXT_PUBLIC_SCRIPT_URL || "";
-export const skillBadgeURL = process.env.NEXT_PUBLIC_SKILLS_URL || "";
+export const skillBadgeURL: string = process.env.NEXT_PUBLIC_SKILLS_URL || "";
 
 // GitHub - profile stuff
-export const profileLink = "https://github.com/nirmit27";
-export const selfiePath =
+export const profileLink: string = "https://github.com/nirmit27";
+export const selfiePath: string =
   "https://avatars.githubusercontent.com/u/93557744?v=4";
 
 // Navigation - navbar items

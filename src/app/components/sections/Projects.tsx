@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../SectionHeader";
 import { projects } from "@/config/config";
 
 export default function Projects() {

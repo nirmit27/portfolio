@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../SectionHeader";
 import { skillBadges, skillBadgeURL } from "@/config/config";
 
 export default function Skills() {
