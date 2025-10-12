@@ -1,22 +1,19 @@
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
+import SectionHeader from "./SectionHeader";
+import { profileLink, selfiePath } from "@/config/config";
+
 export default function About() {
-  const profileLink = "https://github.com/nirmit27";
-  const selfiePath = "https://avatars.githubusercontent.com/u/93557744?v=4";
+  const sectionTitle = "About Me";
 
   return (
     <section id="about" className="pt-30 pb-10 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4">
-            About Me
-          </h2>
-          <div className="w-20 h-px bg-gray-300 mx-auto"></div>
-        </div>
+        <SectionHeader title={sectionTitle} dividerWidth={32} />
 
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center text-justify">
-          {/* Content */}
+          {/* Intro. Section */}
           <div className="space-y-6">
             <p className="md:text-lg text-sm text-gray-600 leading-relaxed">
               I&apos;m a ML engineer with full-stack development skills,
@@ -45,7 +42,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Avatar and Link */}
+          {/* Avatar Section */}
           <div className="flex flex-col gap-4 items-center justify-center md:justify-end">
             {/* Avatar */}
             <div className="relative w-72 h-72 rounded-full p-3 bg-gradient-to-br from-slate-300 to-blue-500">

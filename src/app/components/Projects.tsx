@@ -1,48 +1,16 @@
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 
+import SectionHeader from "./SectionHeader";
+import { projects } from "@/config/config";
+
 export default function Projects() {
-  const projects = [
-    {
-      title: "Gemini AI",
-      description:
-        "An advanced AI-powered web application that provides a suite of services, including a chatbot, image captioning and text embedding.",
-      image: "/screenshots/proj_1.png",
-      tech: ["Streamlit", "Gemini", "Generative AI"],
-      link: "https://github.com/nirmit27/gemini-ai",
-      deployment: "https://gemini-ai-6pieo6evhzghyj5rgazsje.streamlit.app/",
-    },
-    {
-      title: "Book Recommender System",
-      description:
-        "A book recommendation system based on item-based Collaborative Filtering memory-based model created using Flask.",
-      image:
-        "https://raw.githubusercontent.com/nirmit27/Book-Recommender-System/refs/heads/master/static/ss_top50.png",
-      tech: ["Flask", "sklearn", "Tailwind", "Render"],
-      link: "https://github.com/nirmit27/Book-Recommender-System",
-      deployment: "https://book-recommender-system-t2aq.onrender.com",
-    },
-    {
-      title: "NLP Text Analyzer",
-      description:
-        "A simple GUI application created using the tkinter library that offers NLP features like sentiment analysis.",
-      image:
-        "https://raw.githubusercontent.com/nirmit27/NLP-Text-Analyzer/refs/heads/mongo/resources/sa.png",
-      tech: ["API", "tkinter", "MongoDB"],
-      link: "https://github.com/nirmit27/NLP-Text-Analyzer",
-      deployment: "",
-    },
-  ];
+  const sectionTitle = "My Projects";
 
   return (
     <section id="projects" className="pt-30 pb-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-px bg-gray-300 mx-auto"></div>
-        </div>
+        <SectionHeader title={sectionTitle} dividerWidth={32} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -54,7 +22,7 @@ export default function Projects() {
                 <Image
                   width={480}
                   height={270}
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imagePath || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -70,7 +38,7 @@ export default function Projects() {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4 md:text-sm text-xs">
-                  {project.tech.map((tech, techIndex) => (
+                  {project.techStack.map((tech, techIndex) => (
                     <span
                       key={techIndex}
                       className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full"
@@ -82,7 +50,7 @@ export default function Projects() {
 
                 <div className="mt-auto ml-1 flex gap-6 md:text-sm text-xs">
                   <a
-                    href={project.link}
+                    href={project.linkUrl}
                     className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-200"
                     target="__blank"
                   >
@@ -90,9 +58,9 @@ export default function Projects() {
                     <span>Code</span>
                   </a>
 
-                  {project.deployment && (
+                  {project.deploymentUrl && (
                     <a
-                      href={project.deployment}
+                      href={project.deploymentUrl}
                       className="flex items-center gap-2 text-blue-600 hover:text-blue-900 transition-colors duration-200"
                       target="__blank"
                     >

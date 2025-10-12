@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-export default function Contact() {
-  const GSCRIPT_URL = process.env.NEXT_PUBLIC_SCRIPT_URL || "";
+import { GSCRIPT_URL } from "@/config/config";
 
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +17,7 @@ export default function Contact() {
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
 
-  // Handling toasts ...
+  // Handling toast menus
   useEffect(() => {
     if (!showToast) return;
     const timer = setTimeout(() => {
@@ -35,7 +35,7 @@ export default function Contact() {
   };
 
   const showErrorToast = (
-    message = "Something went wrong! Please try again later."
+    message = "Something went wrong. Please try again later."
   ) => {
     setSubmitStatus("error");
     setToastMessage(message);
@@ -100,7 +100,7 @@ export default function Contact() {
 
   return (
     <>
-      {/* Toasts */}
+      {/* Toast Menus */}
       {showToast && (
         <div
           className={`fixed top-4 right-4 z-50 max-w-sm w-full bg-white rounded-lg shadow-lg border-l-4 transform transition-all duration-300 ${
@@ -189,7 +189,7 @@ export default function Contact() {
             <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-4">
               Let&apos;s Work Together
             </h2>
-            <div className="w-20 h-px bg-gray-300 mx-auto mb-6"></div>
+            <div className="w-40 h-px bg-gray-300 mx-auto mb-6"></div>
             <p className="md:text-lg text-sm text-gray-600 max-w-2xl mx-auto">
               Have a project or idea in mind?
               <br />

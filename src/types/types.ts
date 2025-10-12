@@ -1,6 +1,31 @@
-/* I am not sure about where exactly am I supposed to store the `types`, so I am just gonna put them here ig. */
+/* Types (Safety first?) */
 
+// Content
 export type SkillBadge = {
   title: string;
   names: string[];
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  imagePath: string;
+  techStack: string[];
+  linkUrl: string;
+  deploymentUrl: string;
+};
+
+// Components
+export type NavItem = {
+  name: string;
+  href: string;
+};
+
+export type SectionHeaderProps = {
+  title: string;
+  dividerWidth?: Number;
+};
+
+export type DividerProps = {
+  width?: Number;
 };

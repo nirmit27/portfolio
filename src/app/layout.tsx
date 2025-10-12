@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 
-import "./globals.css";
+import "./styles/globals.css";
 
 import Nav from "./components/Nav";
 import ScrollToTop from "./components/ui/ScrollToTop";
