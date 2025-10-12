@@ -23,9 +23,9 @@ export type NavItem = {
 
 export type SectionHeaderProps = {
   title: string;
-  dividerWidth?: Number;
+  dividerWidth?: number;
 };
 
 export type DividerProps = {
-  width?: Number;
+  width?: number;
 };
