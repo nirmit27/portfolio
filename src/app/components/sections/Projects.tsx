@@ -5,12 +5,12 @@ import SectionHeader from "../SectionHeader";
 import { projects } from "@/config/config";
 
 export default function Projects() {
-  const sectionTitle = "My Projects";
+  const sectionTitle: string = "My Projects";
 
   return (
     <section id="projects" className="pt-30 pb-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader title={sectionTitle} dividerWidth={32} />
+        <SectionHeader title={sectionTitle} dividerWidth={"40"} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (

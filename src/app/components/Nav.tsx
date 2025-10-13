@@ -2,21 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { avatarPath, navItems } from "@/config/config";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const avatarPath = process.env.NEXT_PUBLIC_AVATAR_PATH || "";
-
-  const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +34,7 @@ export default function Nav() {
               <div className="relative">
                 <Image
                   src={avatarPath}
-                  alt="Nerv Logo"
+                  alt="Nerv Insignia"
                   width={40}
                   height={40}
                   className="rounded-lg"

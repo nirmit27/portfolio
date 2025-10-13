@@ -5,12 +5,12 @@ import SectionHeader from "../SectionHeader";
 import { profileLink, selfiePath } from "@/config/config";
 
 export default function About() {
-  const sectionTitle = "About Me";
+  const sectionTitle: string = "About Me";
 
   return (
     <section id="about" className="pt-30 pb-10 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader title={sectionTitle} dividerWidth={32} />
+        <SectionHeader title={sectionTitle} dividerWidth={"40"} />
 
         <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center text-justify">
           {/* Intro. Section */}
@@ -45,8 +45,8 @@ export default function About() {
           {/* Avatar Section */}
           <div className="flex flex-col gap-4 items-center justify-center md:justify-end">
             {/* Avatar */}
-            <div className="relative w-72 h-72 rounded-full p-3 bg-gradient-to-br from-slate-300 to-blue-500">
-              <div className="w-full h-full rounded-full bg-white shadow-lg overflow-hidden">
+            <div className="relative lg:w-72 lg:h-72 md:w-60 md:h-60 w-40 h-40 rounded-full md:p-2 p-1 bg-gradient-to-br from-slate-300 to-blue-500">
+              <div className="w-full h-full mx-auto rounded-full bg-white shadow-lg overflow-hidden">
                 <Image
                   src={selfiePath}
                   alt="Nirmit Mishra"

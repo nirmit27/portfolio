@@ -4,7 +4,7 @@ import { SectionHeaderProps } from "@/types/types";
 
 export default function SectionHeader({
   title,
-  dividerWidth = 20,
+  dividerWidth = "20",
 }: SectionHeaderProps) {
   return (
     <div className="text-center mb-16">

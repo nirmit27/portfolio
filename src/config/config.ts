@@ -8,6 +8,7 @@ export const skillBadgeURL: string = process.env.NEXT_PUBLIC_SKILLS_URL || "";
 
 // GitHub - profile stuff
 export const profileLink: string = "https://github.com/nirmit27";
+export const avatarPath: string = process.env.NEXT_PUBLIC_AVATAR_PATH || "";
 export const selfiePath: string =
   "https://avatars.githubusercontent.com/u/93557744?v=4";
 
