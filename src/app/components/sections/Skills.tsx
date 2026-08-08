@@ -11,7 +11,7 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader title={sectionTitle} dividerWidth={"40"} />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 gap-x-6 gap-y-12">
           {skillBadges.map((category, index) => (
             <div key={index} className="text-center">
               <h3 className="text-xl font-semibold text-slate-900 mb-8">
@@ -19,28 +19,18 @@ export default function Skills() {
               </h3>
 
               {/* Icons */}
-              <div className="flex flex-col items-center space-y-6">
-                <Image
-                  width={150}
-                  height={150}
-                  src={`${skillBadgeURL}?i=${category.names
-                    .map((name) => name.toLowerCase())
-                    .join(",")}&theme=light&perline=3`}
-                  alt={`${category.title} icons`}
-                  className="transition-transform duration-300 hover:scale-105"
-                />
-
-                {/* Titles */}
-                <div className="w-full mx-auto grid grid-cols-3 gap-2">
-                  {category.names.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      className="mx-auto min-w-full p-1 bg-white rounded-md shadow-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-                    >
-                      {skill.charAt(0).toUpperCase() + skill.slice(1)}
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 justify-items-center gap-y-4 gap-x-2 max-w-xs mx-auto">
+                {category.names.map((skill, skillIndex) => (
+                  <Image
+                    key={skillIndex}
+                    width={64}
+                    height={64}
+                    src={`${skillBadgeURL}?i=${skill.toLowerCase()}&theme=light`}
+                    alt={`${skill} icon`}
+                    title={skill.charAt(0).toUpperCase() + skill.slice(1)}
+                    className="w-16 h-16 transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                ))}
               </div>
             </div>
           ))}
@@ -49,3 +39,4 @@ export default function Skills() {
     </section>
   );
 }
+  

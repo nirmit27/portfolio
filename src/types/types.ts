@@ -12,7 +12,7 @@ export type Project = {
   imagePath: string;
   techStack: string[];
   linkUrl: string;
-  deploymentUrl: string;
+  deploymentUrl?: string;
 };
 
 // Components

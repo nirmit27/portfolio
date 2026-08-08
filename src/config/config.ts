@@ -34,7 +34,7 @@ export const skillBadges: SkillBadge[] = [
     title: "Frameworks",
     names: [
       "Express",
-      "React",
+      "Vite",
       "Next",
       "Nodejs",
       "Tailwind",

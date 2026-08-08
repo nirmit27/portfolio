@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -52,7 +54,7 @@ export default function Projects() {
                   <a
                     href={project.linkUrl}
                     className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-200"
-                    target="__blank"
+                    target="_blank"
                   >
                     <Github size={16} />
                     <span>Code</span>
@@ -62,7 +64,7 @@ export default function Projects() {
                     <a
                       href={project.deploymentUrl}
                       className="flex items-center gap-2 text-blue-600 hover:text-blue-900 transition-colors duration-200"
-                      target="__blank"
+                      target="_blank"
                     >
                       <ExternalLink size={16} />
                       <span>Deployment</span>
