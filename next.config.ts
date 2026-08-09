@@ -1,4 +1,4 @@
-// This is NOT safe.
+// NOTE: May get compromised in the future.
 
 const nextConfig = {
   images: {
@@ -7,6 +7,7 @@ const nextConfig = {
       "skillicons.dev",
       "raw.githubusercontent.com",
       "avatars.githubusercontent.com",
+      "res.cloudinary.com",
     ],
   },
 };

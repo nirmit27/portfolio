@@ -20,7 +20,12 @@ export const navItems: NavItem[] = [
   { name: "Contact", href: "#contact" },
 ];
 
-// Content - skills
+// Content - Hero
+export const title: string = "Software Engineer";
+export const description: string =
+  "I build intelligent, user-focused applications — from full-stack platforms and data-driven systems to LLM-powered tools, guided by clean architecture and minimalist design.";
+
+// Content - Skills
 export const skillBadges: SkillBadge[] = [
   {
     title: "Languages",
@@ -50,12 +55,14 @@ export const skillBadges: SkillBadge[] = [
   },
 ];
 
+// Content - Projects
 export const projects: Project[] = [
   {
     title: "Gemini AI",
     description:
       "An advanced AI-powered web application that provides a suite of services, including a chatbot, image captioning and text embedding.",
-    imagePath: "/screenshots/proj_1.png",
+    imagePath:
+      "https://res.cloudinary.com/bqscvdxr/image/upload/v1786281592/proj_1_xbp9oq.png",
     techStack: ["Streamlit", "Gemini", "Generative AI"],
     linkUrl: "https://github.com/nirmit27/gemini-ai",
     deploymentUrl: "https://gemini-ai-6pieo6evhzghyj5rgazsje.streamlit.app/",

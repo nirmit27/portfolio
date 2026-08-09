@@ -2,6 +2,8 @@
 
 import { ArrowDown } from "lucide-react";
 
+import { title, description } from "@/config/config";
+
 export default function Hero() {
   return (
     <section
@@ -14,14 +16,13 @@ export default function Hero() {
             Nirmit Mishra
           </h1>
           <p className="text-lg md:text-2xl text-gray-600 font-light">
-            Machine Learning Engineer
+            {title}
           </p>
         </div>
 
         <div className="space-y-8">
           <p className="md:text-lg text-[0.85rem] text-gray-500 max-w-2xl mx-auto leading-relaxed md:text-center text-justify">
-            I build intelligent, user-focused web applications — from smart
-            dashboards to LLM-powered tools using a minimalist design language.
+            {description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -29,7 +30,7 @@ export default function Hero() {
               href="#projects"
               className="md:text-lg text-sm px-8 py-3 bg-slate-900 text-white rounded-full hover:bg-gray-800 transition-colors duration-200"
             >
-              View My Work
+              My Projects
             </a>
             <a
               href="#contact"

@@ -37,7 +37,7 @@ export default function About() {
                 Full-Stack Developer
               </span>
               <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm">
-                AI Solutions Builder
+                LLM Solutions Builder
               </span>
             </div>
           </div>
